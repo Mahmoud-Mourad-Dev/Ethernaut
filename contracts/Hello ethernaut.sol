@@ -27,3 +27,22 @@ contract Instance {
     }
     return 'Wrong parameter.';
   }
+
+  function info42() public pure returns (string memory) {
+    return 'theMethodName is the name of the next method.';
+  }
+
+  function method7123949() public pure returns (string memory) {
+    return 'If you know the password, submit it to authenticate().';
+  }
+
+  function authenticate(string memory passkey) public {
+    if(keccak256(abi.encodePacked(passkey)) == keccak256(abi.encodePacked(password))) {
+      cleared = true;
+    }
+  }
+
+  function getCleared() public view returns (bool) {
+    return cleared;
+  }
+}
